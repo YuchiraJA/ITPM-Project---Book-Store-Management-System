@@ -38,6 +38,7 @@ export default class App extends Component {
         <Route path="/addoffer" exact component={CreateOffer}></Route>
         {/*<Route path="/edit/:id" exact component={EditOffer}></Route>*/}
         <Route path="/AdminHome" exact component={AdminHome}></Route>
+        <Route path="/CreateInventry" exact component={CreateInventry}></Route>
         <br></br>
         <br></br> 
       </div>
