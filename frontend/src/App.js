@@ -12,6 +12,7 @@ import ManageOffers from './components/ManageOffers';
 import CreateOffer from './components/CreateOffer';
 import Footer from './components/footer';
 import Home from './components/Home';
+import AdminHome from './components/AdminHome';
 
 
 import "./index.css"
@@ -36,6 +37,8 @@ export default class App extends Component {
         <Route path="/manageOffers" exact component={ManageOffers}></Route>
         <Route path="/addoffer" exact component={CreateOffer}></Route>
         {/*<Route path="/edit/:id" exact component={EditOffer}></Route>*/}
+        <Route path="/AdminHome" exact component={AdminHome}></Route>
+        <Route path="/CreateInventry" exact component={CreateInventry}></Route>
         <br></br>
         <br></br> 
       </div>
