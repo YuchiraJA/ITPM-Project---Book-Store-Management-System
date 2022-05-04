@@ -108,15 +108,7 @@ handleSearchArea = (e) =>{
 </center>
         <br></br>
          <table>
-           <tr>
-            
-        
-     
-       
-      
-   
-
-        
+           <tr> 
 
 
         <td>
