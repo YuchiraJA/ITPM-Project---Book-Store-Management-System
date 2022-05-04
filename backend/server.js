@@ -14,6 +14,8 @@ const feedbackRoutes = require('./routes/feedbacks');
 const offerRoutes = require('./routes/offers');
 const inventryRoutes = require('./routes/inventrys');
 const orderRoutes = require('./routes/orders.js');
+const orderSuppliers = require('./routes/Supplier.js');
+
 
 //app middleware
 app.use(bodyParser.json());
@@ -24,6 +26,8 @@ app.use(feedbackRoutes);
 app.use(offerRoutes);
 app.use(inventryRoutes);
 app.use(orderRoutes);
+app.use(orderSuppliers);
+
 
 const port = 8000;
 const DB_URL= 'mongodb+srv://admin:admin@cluster0.wu8ee.mongodb.net/ITPM?retryWrites=true&w=majority';
