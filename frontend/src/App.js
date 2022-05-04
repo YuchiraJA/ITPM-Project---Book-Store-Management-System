@@ -11,6 +11,7 @@ import NavBar from './components/NavBar';
 import ManageOffers from './components/ManageOffers';
 import CreateOffer from './components/CreateOffer';
 import Footer from './components/footer';
+import Home from './components/Home';
 
 
 import "./index.css"
@@ -27,6 +28,7 @@ export default class App extends Component {
       &nbsp; &nbsp;
       <div className="container">
         
+        <Route path="/" exact component={Home}></Route>
         {/*<Route path="/managefeedback" exact component={ManageFeedbacks}></Route>*/}
         {/*<Route path="/feedbackform" exact component={CreateFeedback}></Route>*/}
         {/* <Route path="/edit/:id" exact component={EditFeedback}></Route> */}
