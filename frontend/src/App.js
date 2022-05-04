@@ -14,6 +14,8 @@ import Footer from './components/footer';
 import Home from './components/Home';
 import AdminHome from './components/AdminHome';
 import CreateInventry from './components/CreateInventry';
+import EditInventry from './components/EditInventry';
+import InventryDetails from './components/InventryDetails';
 
 
 import CreateOrder from './components/CreateOrder';
@@ -47,6 +49,8 @@ export default class App extends Component {
         {/*<Route path="/edit/:id" exact component={EditOffer}></Route>*/}
         <Route path="/AdminHome" exact component={AdminHome}></Route>
         <Route path="/CreateInventry" exact component={CreateInventry}></Route>
+        <Route path="/EditInventry/:id" exact component={EditInventry}></Route>
+        <Route path="/InventryDetails/:id" exact component={InventryDetails}></Route>
 
 
         <Route path="/CreateOrder" exact component={CreateOrder}></Route>
