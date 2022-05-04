@@ -13,6 +13,7 @@ import CreateOffer from './components/CreateOffer';
 import Footer from './components/footer';
 import Home from './components/Home';
 import AdminHome from './components/AdminHome';
+import CreateInventry from './components/CreateInventry';
 
 
 import "./index.css"
