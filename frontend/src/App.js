@@ -22,6 +22,11 @@ import OrderDetails from './components/OrderDetails';
 import AdminOrder from './components/AdminOrder';
 import customerDetail from './components/customerDetail';
 
+import AdminSupplier from './components/AdminSupplier';
+import SupplierDetails from './components/SupplierDetails';CreateSupplier
+import CreateSupplier from './components/CreateSupplier';
+import EditSupplier from './components/EditSupplier';
+
 
 import "./index.css"
 
@@ -54,6 +59,12 @@ export default class App extends Component {
         <Route path="/OrderDetails/:id" exact component={OrderDetails}></Route>
         <Route path="/customerDetail" exact component={customerDetail}></Route>
         <Route path="/AdminOrder" exact component={AdminOrder}></Route>
+
+        <Route path="/AdminSupplier" exact component={AdminSupplier}></Route>
+        <Route path="/SupplierDetails/:id" exact component={SupplierDetails}></Route>
+        <Route path="/CreateSupplier" exact component={CreateSupplier}></Route>
+        <Route path="/EditSupplier/:id" exact component={EditSupplier}></Route>
+
 
 
         <br></br>
