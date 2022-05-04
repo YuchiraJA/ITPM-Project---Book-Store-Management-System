@@ -12,6 +12,7 @@ const app = express();
 //import routes
 const feedbackRoutes = require('./routes/feedbacks');
 const offerRoutes = require('./routes/offers');
+const inventryRoutes = require('./routes/inventrys');
 
 //app middleware
 app.use(bodyParser.json());
@@ -20,6 +21,7 @@ app.use(cors());
 //route middleware (user send request to frontend and that frontend request hit to this "feedbackroutes". them this code to that requests to routes.)
 app.use(feedbackRoutes);
 app.use(offerRoutes);
+app.use(inventryRoutes);
 
 const port = 8000;
 const DB_URL= 'mongodb+srv://admin:admin@cluster0.wu8ee.mongodb.net/ITPM?retryWrites=true&w=majority';
