@@ -16,6 +16,13 @@ import AdminHome from './components/AdminHome';
 import CreateInventry from './components/CreateInventry';
 
 
+import CreateOrder from './components/CreateOrder';
+import EditOrder from './components/EditOrder';
+import OrderDetails from './components/OrderDetails';
+import AdminOrder from './components/AdminOrder';
+import customerDetail from './components/customerDetail';
+
+
 import "./index.css"
 
 
@@ -40,6 +47,15 @@ export default class App extends Component {
         {/*<Route path="/edit/:id" exact component={EditOffer}></Route>*/}
         <Route path="/AdminHome" exact component={AdminHome}></Route>
         <Route path="/CreateInventry" exact component={CreateInventry}></Route>
+
+
+        <Route path="/CreateOrder" exact component={CreateOrder}></Route>
+        <Route path="/EditOrder/:id" exact component={EditOrder}></Route>
+        <Route path="/OrderDetails/:id" exact component={OrderDetails}></Route>
+        <Route path="/customerDetail" exact component={customerDetail}></Route>
+        <Route path="/AdminOrder" exact component={AdminOrder}></Route>
+
+
         <br></br>
         <br></br> 
       </div>
