@@ -42,11 +42,12 @@ export default class OffersHome extends Component {
                                 <div className="row center" >                                                                  
                                       {this.state.offers.map((offers,index)=>(
                                         <div className="card" >
-                                          <a href={`/offers/${offers._id}`}>                                          
+                                          {/* <a href={`/offers/${offers._id}`}>                                           */}
                                           <center><img className="card-img-top" src={ "http://localhost:8000/" + offers.oImage } alt="Card image cap"/></center>
-                                          </a>
+                                          {/* </a> */}
                                           
                                                   <h6 className="card1-title">{offers.otitle}</h6>
+                                          
                                              
                                         </div>                                            
                                     ))

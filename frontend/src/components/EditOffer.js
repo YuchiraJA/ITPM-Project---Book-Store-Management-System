@@ -50,7 +50,7 @@ export default class EditOffer extends Component {
 
                           icon: 'success',
     
-                          title: "Feedback Updated Successfully !",
+                          title: "Offers Updated Successfully !",
     
                           type: "success"
     

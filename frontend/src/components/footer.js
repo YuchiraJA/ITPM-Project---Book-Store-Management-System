@@ -10,7 +10,7 @@ export default class footer extends Component {
                     <div class="footer-col">
                         <h4>BOOK STORE</h4>
                         <ul>
-                            <li><a href="/Home">Home</a></li>
+                            <li><a href="/">Home</a></li>
                             <li><a href="#">Offers</a></li>
                             <li><a href="feedbackform">Feedback</a></li>
                             <li><a href="#">About Us</a></li>
