@@ -10,11 +10,12 @@ import ManageFeedbacks from './components/ManageFeedbacks';
 import EditFeedback from './components/EditFeedback';
 import ManageOffers from './components/ManageOffers';
 import CreateOffer from './components/CreateOffer';
+import OffersHome from './components/OffersHome';
+
 import Footer from './components/footer';
 import Home from './components/Home';
 import AdminHome from './components/AdminHome';
 import CreateInventry from './components/CreateInventry';
-
 
 import CreateOrder from './components/CreateOrder';
 import EditOrder from './components/EditOrder';
@@ -50,6 +51,7 @@ export default class App extends Component {
         <Route path="/manageOffers" exact component={ManageOffers}></Route>
         <Route path="/addoffer" exact component={CreateOffer}></Route>
         <Route path="/edit/:id" exact component={EditOffer}></Route>
+        <Route path="/OffersHome" exact component={OffersHome}></Route>
 
 
         <Route path="/AdminHome" exact component={AdminHome}></Route>
