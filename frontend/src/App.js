@@ -28,6 +28,10 @@ import AdminSupplier from './components/AdminSupplier';
 import SupplierDetails from './components/SupplierDetails';
 import CreateSupplier from './components/CreateSupplier';
 import EditSupplier from './components/EditSupplier';
+import Login from './components/Login';
+import AdminLogin from './components/AdminLogin';
+import Contactus from './components/Contactus';
+import Aboutus from './components/Aboutus';
 
 
 import "./index.css"
@@ -41,7 +45,7 @@ export default class App extends Component {
     return(
       <BrowserRouter>
         
-        <Route path="/" exact component={Home}></Route>
+        <Route path="/Home" exact component={Home}></Route>
         <Route path="/managefeedbacks" exact component={ManageFeedbacks}></Route>
         <Route path="/feedbackform" exact component={CreateFeedback}></Route>
         <Route path="/feedback/:id" exact component={FeedbackDetails}></Route>
@@ -66,6 +70,11 @@ export default class App extends Component {
         <Route path="/SupplierDetails/:id" exact component={SupplierDetails}></Route>
         <Route path="/CreateSupplier" exact component={CreateSupplier}></Route>
         <Route path="/EditSupplier/:id" exact component={EditSupplier}></Route>
+
+        <Route path="/" exact component={Login}></Route>
+        <Route path="/adminlogin" exact component={AdminLogin}></Route>
+        <Route path="/Contactus" exact component={Contactus}></Route>
+        <Route path="/Aboutus" exact component={Aboutus}></Route>
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import AdminNavBar from './AdminNavBar';
 
 export default class FeedbackDetails extends Component {
   constructor(props){
@@ -29,6 +30,9 @@ componentDidMount(){
 
     return (
       <div>
+          <AdminNavBar/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <div className="container">
           <br></br>
         <h4>Feedback Details</h4>
         <hr/>
@@ -46,6 +50,7 @@ componentDidMount(){
           <dt className="col-sm-3">Feedback Message</dt>
           <dd className="col-sm-9">{feedmessage}</dd>         
         </dl>
+      </div>  
       </div>
     )
   }

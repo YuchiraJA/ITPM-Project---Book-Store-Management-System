@@ -109,23 +109,18 @@ generateReport = (tickets) => {
       
       <center><h1>Manage Offers</h1>
       
-                        {/*Search*/}
-                        <div className="col-lg-3 mt-2 mb-2" >
-                    <input
-                    className="form-control"
-                    type="search"
-                    placeholder="search offer title"
-                    name="searchQuery"
-                    onChange={this.handleSearchArea}/>
+          {/*Search*/}
+          <div className="col-lg-3 mt-2 mb-2" >
+        <input className="form-control" type="search" placeholder="search offer title" name="searchQuery"  onChange={this.handleSearchArea}/>
         </div>
         </center>
          <br></br>
-      <table>
+          <table>
            <tr>
           
 
         <td>
-        <button className="btn btn-success"><a href="/addOffer" style={{textDecoration:'none',color:'white'}}>Create New Offer</a></button>
+        <button className="btn btn-success"><a href="/addOffer" style={{textDecoration:'none',color:'white'}}>Create New Offer</a></button>&nbsp;&nbsp;
         <button onClick={()=>this.generateReport(this.state.offers)} className="btn btn-success"><a style={{textDecoration:'none',color:'white'}}>Generate Report</a></button>
         </td>
         </tr>

@@ -133,8 +133,6 @@ cancelCourse = () => {
 
 
 
-
-
   render() {
     return (
       <div><NavBar/>
