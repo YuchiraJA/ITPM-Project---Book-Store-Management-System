@@ -83,7 +83,7 @@ export default class Home extends Component {
                                               <h6 className="card-price">රු {inventrys.price}</h6>
 
                                               <a href={`/InventryDetails/${inventrys._id}`}>                                                  
-                                                  <center><a href={`/InventryDetails/${inventrys._id}`} class="btn btn-primary">Buy Now</a></center>
+                                                  <center><a style={{backgroundColor: "#24262b"}} href={`/InventryDetails/${inventrys._id}`} class="btn btn-primary">Buy Now</a></center>
                                               </a>
                                           </div>
 
