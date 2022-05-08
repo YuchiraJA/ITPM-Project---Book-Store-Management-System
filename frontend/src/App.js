@@ -4,7 +4,6 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 import CreateFeedback from './components/CreateFeedback';
 import FeedbackDetails from './components/FeedbackDetails';
-import NavBar from './components/NavBar';
 import EditOffer from './components/EditOffer';
 import ManageFeedbacks from './components/ManageFeedbacks';
 import EditFeedback from './components/EditFeedback';
@@ -41,9 +40,8 @@ export default class App extends Component {
   render(){
     return(
       <BrowserRouter>
-      <NavBar/>
-      &nbsp; &nbsp;
-      <div className="container">
+      
+      <div>
         
         <Route path="/" exact component={Home}></Route>
         <Route path="/managefeedback" exact component={ManageFeedbacks}></Route>

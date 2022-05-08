@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import AdminNavBar from './AdminNavBar';
 
 export default class AdminSupplier extends Component {
   constructor(props){
@@ -79,6 +80,8 @@ retrieveSuppliers(){
   render() {
     return (
       <div>
+        <AdminNavBar/>
+      <div>
         <div class="d-flex justify-content-between">
             &nbsp;
             <center><h3>ALL Suppliers</h3></center>
@@ -136,7 +139,8 @@ retrieveSuppliers(){
           ))}
           </tbody>
         </table>                       
-      </div>      
+      </div>   
+      </div>   
     )
   }
 }

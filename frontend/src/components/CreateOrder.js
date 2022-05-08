@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import NavBar from './NavBar';
 
 export default class CreateOrder extends Component {
         constructor(props){
@@ -168,7 +169,11 @@ export default class CreateOrder extends Component {
 
   render() {
     return (
+      <div>
+        <NavBar/>
+      
       <div className='container p-5 mb-2 bg-light text-dark ' >
+        
         <form className='form-group'>
         <h1>Create Order</h1>
           <div className='row'>
@@ -272,6 +277,7 @@ export default class CreateOrder extends Component {
           </div>
         </form>
         
+      </div>
       </div>
     )
   }

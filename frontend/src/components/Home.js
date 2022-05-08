@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import NavBar from './NavBar';
 
 export default class Home extends Component {
   constructor(props){
@@ -52,6 +53,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
+        <NavBar/>
               <center>
                 <div className="col-lg-3 mt-2 mb-2" >
                         <input

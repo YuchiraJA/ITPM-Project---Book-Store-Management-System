@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import AdminNavBar from './AdminNavBar';
 
 export default class EditInventry extends Component {
 
@@ -205,6 +206,8 @@ export default class EditInventry extends Component {
 
   render() {
     return (
+      <div>
+        <AdminNavBar/>
       <div className="col-md-8 mt-4 mx-auto"> <h1 className="h3 mb-3 font-weight-normal"><center>Edit Inventry</center></h1>
         <form className='form-group'>
         <div className='row'>
@@ -308,6 +311,7 @@ export default class EditInventry extends Component {
 
         </form>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
       </div>
     )
   }
