@@ -95,3 +95,54 @@ ul{
 
 
 
+.card{
+	background-color: #ffffff;
+	border-radius: 0.8rem;
+	margin: 1rem;
+	width: 210px;
+	max-width: 50rem;
+	height: 335px;
+	
+}
+
+.row{
+	margin-left: 0rem;
+	
+	
+}
+
+.card-img-top{
+	width: 9.3rem;
+	height: 12.8rem;
+	margin-top: 1rem;
+}
+
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+  }
+  .row.center {
+	justify-content: center;
+  }
+
+ 
+.inventry-medium{
+	margin-left: 15rem;
+	margin-right: 5rem;
+}
+
+.inventry-medium{
+	width: 20rem;
+	height: 30rem;
+}
+  
+.table-medium{
+	margin-right: 15rem;
+} 
+
+
+
+
