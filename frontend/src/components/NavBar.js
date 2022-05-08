@@ -11,8 +11,8 @@ export default class NavBar extends Component {
           </a>
           <nav class="e d-flex justify-content-center">
           <a class="btn btn-primary btn-lg btn-block"  href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="#">Offers</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="#">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg btn-block" href="/OffersHome">Offers</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg btn-block" href="/feedbackform">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="btn btn-primary btn-lg btn-block" href="#">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="btn btn-primary btn-lg btn-block" href="#">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
             

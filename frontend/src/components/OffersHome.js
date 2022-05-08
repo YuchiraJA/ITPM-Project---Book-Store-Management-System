@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import NavBar from './NavBar';
 
 export default class OffersHome extends Component {
     constructor(props){
@@ -32,6 +33,7 @@ export default class OffersHome extends Component {
   
     render() {
     return (
+    <div><NavBar/>
 
       <div>    <h1 className="h3 mb-3 font-weight-normal">Edit Offer Details</h1>
       <div className="row">
@@ -53,6 +55,8 @@ export default class OffersHome extends Component {
                                 }                           
                             </div>
                         </main>               
+                    </div>      
+                    </div>              
                     </div>   
 
                     </div>                 

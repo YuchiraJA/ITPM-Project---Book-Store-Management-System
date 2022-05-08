@@ -42,7 +42,7 @@ export default class App extends Component {
       <BrowserRouter>
         
         <Route path="/" exact component={Home}></Route>
-        <Route path="/managefeedback" exact component={ManageFeedbacks}></Route>
+        <Route path="/managefeedbacks" exact component={ManageFeedbacks}></Route>
         <Route path="/feedbackform" exact component={CreateFeedback}></Route>
         <Route path="/feedback/:id" exact component={FeedbackDetails}></Route>
         <Route path="/manageOffers" exact component={ManageOffers}></Route>
