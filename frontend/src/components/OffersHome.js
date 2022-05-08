@@ -35,7 +35,8 @@ export default class OffersHome extends Component {
     return (
     <div><NavBar/>
 
-      <div>    <h1 className="h3 mb-3 font-weight-normal">Edit Offer Details</h1>
+      <br></br>
+      <div>   <center> <h1 className="h3 mb-3 font-weight-normal">All Offers</h1> </center>
       <div className="row">
                             <main>
                                 <div className="row center" >                                                                  
@@ -45,11 +46,8 @@ export default class OffersHome extends Component {
                                           <center><img className="card-img-top" src={ "http://localhost:8000/" + offers.oImage } alt="Card image cap"/></center>
                                           </a>
                                           
-                                                  <h6 className="card-title">{offers.otitle}</h6>
+                                                  <h6 className="card1-title">{offers.otitle}</h6>
                                              
-
-                                          
-
                                         </div>                                            
                                     ))
                                 }                           
@@ -57,11 +55,7 @@ export default class OffersHome extends Component {
                         </main>               
                     </div>      
                     </div>              
-                    </div>   
-
-                    </div>                 
-      
-    
+                    </div>           
     )
   }
 }

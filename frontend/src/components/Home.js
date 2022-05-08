@@ -59,7 +59,7 @@ export default class Home extends Component {
                         <input
                         className="form-control"
                         type="search"
-                        placeholder="search"
+                        placeholder="Search Book Title"
                         name="searchQuery"
                         onChange={this.handleSearchArea}/>
                 </div>
