@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import AdminNavBar from './AdminNavBar';
 
 export default class CreateOffer extends Component {
         constructor(props){
@@ -123,6 +124,7 @@ cancelCourse = () => {
 
   render() {
     return (
+      <div><AdminNavBar/>
       <div className="container p-5 mb-2 mx-auto bg-light text-dark"> 
       {/* <div className="col-md-8 mt-4 mx-auto bg-light text-dark">  */}
        <h1 className="h2 mb-3 font-weight-normal">Add Offer Page</h1>
@@ -174,6 +176,7 @@ cancelCourse = () => {
 
         </form>
         <br></br>
+      </div>
       </div>
     )
   }

@@ -44,7 +44,7 @@ export default class App extends Component {
       <div>
         
         <Route path="/" exact component={Home}></Route>
-        <Route path="/managefeedback" exact component={ManageFeedbacks}></Route>
+        <Route path="/managefeedbacks" exact component={ManageFeedbacks}></Route>
         <Route path="/feedbackform" exact component={CreateFeedback}></Route>
         <Route path="/edit/:id" exact component={EditFeedback}></Route> 
         <Route path="/feedback/:id" exact component={FeedbackDetails}></Route>

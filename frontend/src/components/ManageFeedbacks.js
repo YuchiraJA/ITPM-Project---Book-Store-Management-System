@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import AdminNavBar from './AdminNavBar';
 
 export default class ManageFeedbacks extends Component {
 constructor(props){
@@ -31,35 +32,7 @@ retrieveFeedbacks(){
 onDelete = (id) =>{
   axios.delete(`/feedback/delete/${id}`).then((res)=>{
       // alert("Delete Successfully");
-      swal.fire({ title: 'Are you sure?',
-
-          text: "You won't be able to revert this!",
-
-          icon: 'warning',
-
-          showCancelButton: true,
-
-          confirmButtonColor: '#3085d6',
-
-          cancelButtonColor: '#d33',
-
-          confirmButtonText: 'Yes, delete it!'
-
-        }).then((result) => {
-
-          if (result.isConfirmed) {
-
-            swal.fire( 'Deleted!',
-
-            'Your file has been deleted.',
-
-            'success'
-
-            )
-
-          }
-
-      })
+      alert("Delete successfully");
       this.retrieveFeedbacks();
   });
 }
@@ -89,6 +62,7 @@ handleSearchArea = (e) =>{
 
    render(){
      return (
+       <div><AdminNavBar/>
        <div className="container">
          <br></br>
          <center><h2>Manage Feedbacks</h2></center>
@@ -151,6 +125,7 @@ handleSearchArea = (e) =>{
 {/* <button className="btn btn-success"><a href="/add" style={{textDecoration:'none',color:'white'}}>Create New Feedback</a></button> */}
         
 
+       </div>
        </div>
      )
    }

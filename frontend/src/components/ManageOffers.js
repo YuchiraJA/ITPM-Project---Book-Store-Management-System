@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import AdminNavBar from './AdminNavBar';
 
 
 export default class ManageOffers extends Component {
@@ -32,37 +33,7 @@ retrieveOffers(){
 onDelete = (id) =>{
   axios.delete(`/offer/delete/${id}`).then((res)=>{
       // alert("Delete Successfully");
-      swal.fire({ title: 'Are you sure?',
-
-      text: "You won't be able to revert this!",
-
-      icon: 'warning',
-
-      showCancelButton: true,
-
-      confirmButtonColor: '#3085d6',
-
-      cancelButtonColor: '#d33',
-
-      confirmButtonText: 'Yes, delete it!'
-
-    }).then((result) => {
-
-      if (result.isConfirmed) {
-
-        swal.fire( 'Deleted!',
-
-        'Offer has been deleted.',
-
-        'success'
-
-        )
-
-      }
-
-  })
-
-
+      alert("Delete successfully");
       this.retrieveOffers();
   });
 }
@@ -92,6 +63,7 @@ handleSearchArea = (e) =>{
 
    render(){
      return (
+       <div><AdminNavBar/>
        <div className="container">
       
       <center><h1>Manage Offers</h1>
@@ -154,6 +126,7 @@ handleSearchArea = (e) =>{
          ))}
         </tbody>
          </table>
+       </div>
        </div>
      )
    }
