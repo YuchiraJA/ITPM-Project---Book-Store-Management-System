@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import jspdf from 'jspdf';
+import "jspdf-autotable";
 
 export default class AdminOrder extends Component {
   constructor(props){
@@ -72,6 +74,42 @@ retrieveOrders(){
   }
 
 
+  generateReport = (tickets) => {
+    const doc = new jspdf();
+  
+    const tableColumn = ["Book Title", "Price", "NIC", "Teliphone Number", "Email", "PostalCode", "Address"];
+  
+    const tableRows = [];
+  
+    tickets.map(ticket => {
+  
+      const ticketData = [
+  
+          ticket.BookTitle,
+          ticket.Price,
+          ticket.NIC,   
+          ticket.TeliphoneNumber,
+          ticket.Email,
+          ticket.PostalCode, 
+          ticket.Address
+  
+      ];
+      tableRows.push(ticketData);
+    })
+  
+   
+      doc.text("All Orders Report", 14, 15).setFontSize(12);
+      const date = Date().split(" ");
+      const dateStr = date[1] + "-" + date[2] + "-" + date[3];
+  
+      doc.autoTable(tableColumn, tableRows, { styles: { fontSize: 8, }, startY: 35 });
+      doc.text(`Report Genarated Date - ${dateStr}`, 14, 23);
+      doc.save(`allOrders_report_.pdf`);
+  
+  }
+
+
+
 
   render() {
     return (
@@ -87,6 +125,10 @@ retrieveOrders(){
                         name="searchQuery"
                         onChange={this.handleSearchArea}/>
             </div>
+            
+            <button onClick={()=>this.generateReport(this.state.orders)} className="btn btn-success" >     
+                Generate Report                
+            </button>
             
             &nbsp;
         </div>
@@ -135,9 +177,7 @@ retrieveOrders(){
         </table>  
         <br></br>
         <center>
-        <button onClick={this.showAlert2} className="btn btn-success" >     
-                Generate Report                
-        </button>  
+         
         </center>   
         <br></br>                 
       </div>      
