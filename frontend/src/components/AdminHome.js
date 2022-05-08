@@ -3,6 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 import jspdf from 'jspdf';
 import "jspdf-autotable";
+import AdminNavBar from './AdminNavBar';
 
 export default class AdminHome extends Component {
   constructor(props){
@@ -111,6 +112,7 @@ componentDidMount(){
   render() {
     return (
       <div>
+        <AdminNavBar/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <center><h1 className="h3 mb-3 font-weight-normal">ALL BOOKS</h1></center>
 

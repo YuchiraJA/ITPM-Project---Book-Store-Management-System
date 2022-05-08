@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import NavBar from './NavBar';
 
 export default class EditOrder extends Component {
 
@@ -195,7 +196,9 @@ export default class EditOrder extends Component {
 
   render() {
     return (
+      <div><NavBar/>
       <div className='container p-5 mb-2 bg-light text-dark ' >
+        
         <form className='form-group'>
         <h1>Update Order</h1>
           <div className='row'>
@@ -298,6 +301,7 @@ export default class EditOrder extends Component {
           </div>
         </form>
         
+      </div>
       </div>
     )
   }

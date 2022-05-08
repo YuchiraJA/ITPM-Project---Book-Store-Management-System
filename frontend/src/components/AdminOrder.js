@@ -3,6 +3,7 @@ import axios from 'axios';
 import swal from 'sweetalert2';
 import jspdf from 'jspdf';
 import "jspdf-autotable";
+import AdminNavBar from './AdminNavBar';
 
 export default class AdminOrder extends Component {
   constructor(props){
@@ -114,6 +115,7 @@ retrieveOrders(){
   render() {
     return (
       <div>
+        <AdminNavBar/>
         <div class="d-flex justify-content-between">
             &nbsp;
             <center><h3>ALL ORDER</h3></center>

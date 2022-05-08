@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert';
-
+import NavBar from './NavBar';
 
 export default class AdminOrder extends Component {
   constructor(props){
@@ -85,7 +85,10 @@ retrieveOrders(){
 
   render() {
     return (
+      <div>
+        <NavBar/>
       <div className='container'>
+        
         <div >
             &nbsp;
             <center><h3>ORDER</h3></center>
@@ -140,7 +143,8 @@ retrieveOrders(){
         </button> 
         </center>    
         <br></br>                
-      </div>      
+      </div>    
+      </div>  
     )
   }
 }

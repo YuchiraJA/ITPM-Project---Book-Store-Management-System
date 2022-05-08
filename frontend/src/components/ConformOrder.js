@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Swal from "sweetalert2";
+import NavBar from './NavBar';
 
 export default class componentName extends Component {
 
@@ -15,6 +16,7 @@ export default class componentName extends Component {
   render() {
     return (
       <div className="container d-flex justify-content-center" style={{marginTop: 90}}>
+        <NavBar/>
       <button onClick={this.showAlert} className="btn btn-primary btn-lg">
          Show Alert
    </button>
