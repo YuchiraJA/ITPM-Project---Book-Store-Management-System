@@ -41,14 +41,10 @@ export default class App extends Component {
   render(){
     return(
       <BrowserRouter>
-      <NavBar/>
-      &nbsp; &nbsp;
-      <div className="container">
         
         <Route path="/" exact component={Home}></Route>
         <Route path="/managefeedback" exact component={ManageFeedbacks}></Route>
         <Route path="/feedbackform" exact component={CreateFeedback}></Route>
-        <Route path="/edit/:id" exact component={EditFeedback}></Route> 
         <Route path="/feedback/:id" exact component={FeedbackDetails}></Route>
         <Route path="/manageOffers" exact component={ManageOffers}></Route>
         <Route path="/addoffer" exact component={CreateOffer}></Route>
@@ -77,7 +73,7 @@ export default class App extends Component {
 
         <br></br>
         <br></br> 
-      </div>
+
       <Footer/>
       </BrowserRouter>
     )
