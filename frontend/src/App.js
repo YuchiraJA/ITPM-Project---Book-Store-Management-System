@@ -4,7 +4,6 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 import CreateFeedback from './components/CreateFeedback';
 import FeedbackDetails from './components/FeedbackDetails';
-import NavBar from './components/NavBar';
 import EditOffer from './components/EditOffer';
 import ManageFeedbacks from './components/ManageFeedbacks';
 import EditFeedback from './components/EditFeedback';
@@ -56,8 +55,7 @@ export default class App extends Component {
         <Route path="/InventryDetails/:id" exact component={InventryDetails}></Route>
 
 
-        <Route path="/AdminHome" exact component={AdminHome}></Route>
-        <Route path="/CreateInventry" exact component={CreateInventry}></Route>
+        
         <Route path="/CreateOrder" exact component={CreateOrder}></Route>
         <Route path="/EditOrder/:id" exact component={EditOrder}></Route>
         <Route path="/OrderDetails/:id" exact component={OrderDetails}></Route>

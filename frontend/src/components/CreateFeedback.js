@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import NavBar from './NavBar';
 
 export default class CreateFeedback extends Component {
         constructor(props){
@@ -136,7 +137,7 @@ cancelCourse = () => {
 
   render() {
     return (
-      
+      <div><NavBar/>
       <div className="container p-5 mb-2 bg-light text-dark"> 
        <h1 className="h2 mb-3 font-weight-normal">FeedBack Form</h1>
         <form className='need-validation' noValidate>
@@ -205,6 +206,7 @@ cancelCourse = () => {
 
         </form>
         <br></br>
+      </div>
       </div>
     )
   }

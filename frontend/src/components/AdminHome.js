@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
+import jspdf from 'jspdf';
+import "jspdf-autotable";
+import AdminNavBar from './AdminNavBar';
 
 export default class AdminHome extends Component {
   constructor(props){
@@ -71,10 +74,45 @@ componentDidMount(){
   }
 
 
+  generateReport = (tickets) => {
+    const doc = new jspdf();
+  
+    const tableColumn = ["Book Title", "Book Price", "Language", "Author", "Publisher", "ISBN Number", "Details"];
+  
+    const tableRows = [];
+  
+    tickets.map(ticket => {
+  
+      const ticketData = [
+  
+          ticket.title,
+          ticket.price,  
+          ticket.language,  
+          ticket.author,  
+          ticket.publisher,  
+          ticket.isbn,  
+          ticket.details    
+  
+      ];
+      tableRows.push(ticketData);
+    })
+  
+   
+      doc.text("All Inventrys Report", 14, 15).setFontSize(12);
+      const date = Date().split(" ");
+      const dateStr = date[1] + "-" + date[2] + "-" + date[3];
+  
+      doc.autoTable(tableColumn, tableRows, { styles: { fontSize: 8, }, startY: 35 });
+      doc.text(`Report Genarated Date - ${dateStr}`, 14, 23);
+      doc.save(`allinventrys_report_.pdf`);  
+  }
+
+
 
   render() {
     return (
       <div>
+        <AdminNavBar/>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <center><h1 className="h3 mb-3 font-weight-normal">ALL BOOKS</h1></center>
 
@@ -97,6 +135,10 @@ componentDidMount(){
                         name="searchQuery"
                         onChange={this.handleSearchArea}/>
                 </div>
+
+                <button onClick={()=>this.generateReport(this.state.inventrys)} className="btn btn-success" >     
+                  Generate Report                
+                </button>
                             
           </div>
           
@@ -154,9 +196,8 @@ componentDidMount(){
             </tbody>
             </table>
             <br/> 
-            <center><a className="btn btn-dark" href="#" >
-            GENERATE REPORT
-                      </a>  </center>                    
+            <center>
+            </center>                    
             </div>      
     )
   }

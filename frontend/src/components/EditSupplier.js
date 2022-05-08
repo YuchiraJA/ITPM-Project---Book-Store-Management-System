@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import swal from 'sweetalert';
+import AdminNavBar from './AdminNavBar';
 
 export default class EditSuppliers extends Component {
 
@@ -151,6 +152,7 @@ export default class EditSuppliers extends Component {
 
   render() {
     return (
+      <div><AdminNavBar/>
       <div className='container p-5 mb-2 bg-light text-dark ' >
         <form className='form-group'>
         <h1>Update SupplierID</h1>
@@ -221,6 +223,7 @@ export default class EditSuppliers extends Component {
           </div>
         </form>
         
+      </div>
       </div>
     )
   }

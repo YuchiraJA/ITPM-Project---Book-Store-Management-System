@@ -10,12 +10,11 @@ export default class NavBar extends Component {
             <img src="./bookstore.png" width="115px" height="40px"/>
           </a>
           <nav class="e d-flex justify-content-center">
-            <a class="btn btn-primary btn-lg btn-block"  href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="/manageoffers">Offers</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="/managefeedback">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="#">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a class="btn btn-primary btn-lg btn-block"  href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg btn-block" href="#">Offers</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg btn-block" href="#">Feedback</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a class="btn btn-primary btn-lg btn-block" href="#">About us</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <a class="btn btn-primary btn-lg btn-block" href="/AdminHome">Admin Home</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-primary btn-lg btn-block" href="#">Contact us</a>&nbsp;&nbsp;&nbsp;&nbsp;
             
           </nav>
           

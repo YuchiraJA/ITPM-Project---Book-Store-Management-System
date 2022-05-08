@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import NavBar from './NavBar';
 
 export default class InventryDetails extends Component {
   constructor(props){
@@ -28,8 +29,10 @@ componentDidMount(){
     const {title,price,language,author,publisher,isbn,details,image}=this.state.inventry;
 
     return (
-
-      <div>
+<div>
+<NavBar/>
+      <div className="container">
+       
 
 <center>
       <table className="table-medium">
@@ -63,6 +66,7 @@ componentDidMount(){
 
       </center>     
         
+      </div>
       </div>
     )
   }
