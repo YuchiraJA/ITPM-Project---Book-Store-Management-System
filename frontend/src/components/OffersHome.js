@@ -34,13 +34,15 @@ export default class OffersHome extends Component {
     render() {
     return (
     <div><NavBar/>
+
+      <div>    <h1 className="h3 mb-3 font-weight-normal">Edit Offer Details</h1>
       <div className="row">
                             <main>
                                 <div className="row center" >                                                                  
                                       {this.state.offers.map((offers,index)=>(
                                         <div className="card" >
                                           <a href={`/offers/${offers._id}`}>                                          
-                                          <center><img className="card-img-top" src={ "http://localhost:8000/" + offers.feedmessage } alt="Card image cap"/></center>
+                                          <center><img className="card-img-top" src={ "http://localhost:8000/" + offers.oImage } alt="Card image cap"/></center>
                                           </a>
                                           
                                                   <h6 className="card-title">{offers.otitle}</h6>
@@ -55,6 +57,9 @@ export default class OffersHome extends Component {
                         </main>               
                     </div>      
                     </div>              
+                    </div>   
+
+                    </div>                 
       
     
     )

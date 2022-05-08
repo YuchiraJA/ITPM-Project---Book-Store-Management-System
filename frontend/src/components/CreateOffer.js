@@ -9,12 +9,12 @@ export default class CreateOffer extends Component {
 
           this.state={
               otitle:"",
-              cemail:"",
-              feedmessage:"",
+              oDes:"",
+              oImage:"",
 
               otitleError:"",
-              cemailError:"",
-              feedmessageError:""
+              oDesError:"",
+              oImageError:""
               
           };
       }
@@ -34,14 +34,14 @@ export default class CreateOffer extends Component {
         e.preventDefault();
         this.validation();
 
-        if (this.state.otitle && this.state.cemail && this.state.feedmessage){
+        if (this.state.otitle && this.state.oDes && this.state.oImage){
 
-        const{otitle,cemail,feedmessage} = this.state;
+        const{otitle,oDes,oImage} = this.state;
 
         const data ={
             otitle:otitle,
-            cemail:cemail,
-            feedmessage:feedmessage
+            oDes:oDes,
+            oImage:oImage
         }  
         console.log(data);
 
@@ -60,8 +60,8 @@ export default class CreateOffer extends Component {
             });
             this.setState({
                 otitle:"",
-                cemail:"",
-                feedmessage:""
+                oDes:"",
+                oImage:""
             });
         }
 });
@@ -77,7 +77,7 @@ onChangeImage=event=>{
         data.append('file', this.state.selectedFile)
         axios.post("/offer/upload", data, {
         }).then(res => {
-            this.setState({feedmessage:res.data.filename})
+            this.setState({oImage:res.data.filename})
         })
     })
 }
@@ -85,28 +85,28 @@ onChangeImage=event=>{
 
 validation = () => {
   let otitleError="";
-  let cemailError="";
-  let feedmessageError="";
+  let oDesError="";
+  let oImageError="";
 
   if(!this.state.otitle){
     otitleError="(Order Title Required!)"
   }
 
-  if(!this.state.cemail){
-    cemailError="(Details Required!)"
+  if(!this.state.oDes){
+    oDesError="(Details Required!)"
   }
 
-  if(!this.state.feedmessage){
-    feedmessageError="(Image Required!)"
+  if(!this.state.oImage){
+    oImageError="(Image Required!)"
   }
   
 
 
-  if ( otitleError | cemailError | feedmessageError  ) {
-    this.setState({otitleError , cemailError , feedmessageError  });
+  if ( otitleError | oDesError |oImageError  ) {
+    this.setState({otitleError , oDesError , oImageError  });
     return false;
   } else {
-    this.setState({otitleError  , cemailError , feedmessageError });
+    this.setState({otitleError  , oDesError , oImageError });
   }
   return true;
 }  
@@ -116,8 +116,8 @@ validation = () => {
 cancelCourse = () => { 
   this.setState({
     otitle: "",
-    cemail: "",
-    feedmessage: ""
+    oDes: "",
+    oImage: ""
   });
 }
 
@@ -144,22 +144,22 @@ cancelCourse = () => {
 
             <div className="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Offer Descrption</label>
-              <span style={{color : "red"}}>{this.state.cemailError}</span>
+              <span style={{color : "red"}}>{this.state.oDesError}</span>
               <input type="text"
               className="form-control"
-              name="cemail"
+              name="oDes"
               placeholder="Enter Offer Descrption"
-              value={this.state.cemail}
+              value={this.state.oDes}
               onChange={this.handleInputChange}/>
             </div>
 
 
             <div className="form-group" style={{marginBottom:'15px'}}>
               <label style={{marginBottom:'5px'}}>Offer Image</label>
-              <span style={{color : "red"}}>{this.state.feedmessageError}</span>
+              <span style={{color : "red"}}>{this.state.oImageError}</span>
               <input type="file"
               className="form-control"
-              name="feedmessage"
+              name="oImage"
               placeholder="Select the Image"
               onChange={this.onChangeImage}/>
             </div>

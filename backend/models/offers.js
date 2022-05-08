@@ -6,11 +6,11 @@ const offerSchema = new mongoose.Schema({
         type:String,
         require:true
     },
-    cemail:{
+    oDes:{
         type:String,
         require:true
     },
-    feedmessage:{
+    oImage:{
         type:String,
         require:true
     },   

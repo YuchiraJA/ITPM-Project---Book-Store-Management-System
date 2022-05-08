@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import AdminNavBar from './AdminNavBar';
+import jspdf from 'jspdf'
+import "jspdf-autotable"
+import NavBar from './NavBar';
 
 
 export default class ManageOffers extends Component {
@@ -42,8 +45,8 @@ onDelete = (id) =>{
 filterData(offers,searchkey){
   const result = offers.filter((offer) =>
     offer.otitle.toLowerCase().includes(searchkey) || 
-    offer.cemail.toLowerCase().includes(searchkey) || 
-    offer.feedmessage.toLowerCase().includes(searchkey)
+    offer.oDes.toLowerCase().includes(searchkey) || 
+    offer.oImage.toLowerCase().includes(searchkey)
   )
 
   this.setState({offers:result})
@@ -59,11 +62,49 @@ handleSearchArea = (e) =>{
   });
 }
 
+generateReport = (tickets) => {
+  const doc = new jspdf();
+
+  const tableColumn = ["Offer Title", "Descrption", "Image"];
+
+  const tableRows = [];
+
+  tickets.map(ticket => {
+
+    const ticketData = [
+
+        ticket.otitle,
+
+        ticket.oDes,
+
+        ticket.oImage    
+
+    ];
+    tableRows.push(ticketData);
+  })
+
+ 
+    doc.text("All Offers Report", 14, 15).setFontSize(12);
+    const date = Date().split(" ");
+    const dateStr = date[1] + "-" + date[2] + "-" + date[3];
+
+    doc.autoTable(tableColumn, tableRows, { styles: { fontSize: 8, }, startY: 35 });
+    doc.text(`Report Genarated Date - ${dateStr}`, 14, 23);
+    doc.save(`offers_report_.pdf`);
+
+
+
+}
+
 
 
    render(){
      return (
        <div><AdminNavBar/>
+
+       <div>   
+
+    
        <div className="container">
       
       <center><h1>Manage Offers</h1>
@@ -77,14 +118,15 @@ handleSearchArea = (e) =>{
                     name="searchQuery"
                     onChange={this.handleSearchArea}/>
         </div>
-</center>
-        <br></br>
-         <table>
-           <tr> 
-
+        </center>
+         <br></br>
+      <table>
+           <tr>
+          
 
         <td>
         <button className="btn btn-success"><a href="/addOffer" style={{textDecoration:'none',color:'white'}}>Create New Offer</a></button>
+        <button onClick={()=>this.generateReport(this.state.offers)} className="btn btn-success"><a style={{textDecoration:'none',color:'white'}}>Generate Report</a></button>
         </td>
         </tr>
         </table>
@@ -108,11 +150,11 @@ handleSearchArea = (e) =>{
                  {offers.otitle}
                  </a>
                </td>
-               <td>{offers.cemail}</td>
+               <td>{offers.oDes}</td>
                             <div class="dropdown">
-                                <img src={ "http://localhost:8000/" + offers.feedmessage } alt={offers.name} width="100" height="100"/>                                
+                                <img src={ "http://localhost:8000/" + offers.oImage} alt={offers.name} width="100" height="100"/>                                
                             </div>
-                            {/* <td>{offers.feedmessage}</td> */}
+                            {/* <td>{offers.oImage}</td> */}
                <td width="18%">
                  <a className="btn btn-warning" href={`/edit/${offers._id}`}>
                    <i className="fas fa-edit"></i>&nbsp;Edit
@@ -128,6 +170,7 @@ handleSearchArea = (e) =>{
          </table>
        </div>
        </div>
+      </div>
      )
    }
 }

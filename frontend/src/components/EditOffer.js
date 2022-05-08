@@ -9,8 +9,8 @@ export default class EditOffer extends Component {
 
         this.state={
             otitle:"",
-            cemail:"",
-            feedmessage:""
+            oDes:"",
+            oImage:""
               
         };
       }
@@ -33,12 +33,12 @@ export default class EditOffer extends Component {
 
         const id = this.props.match.params.id;
 
-        const{otitle,cemail,feedmessage} = this.state;
+        const{otitle,oDes,oImage} = this.state;
 
         const data ={
             otitle:otitle,
-            cemail:cemail,
-            feedmessage:feedmessage
+            oDes:oDes,
+            oImage:oImage
         }  
         console.log(data);
  
@@ -62,8 +62,8 @@ export default class EditOffer extends Component {
                         
                         this.setState({
                         otitile:"",
-                        cemail:"",
-                        feedmessage:""
+                        oDes:"",
+                        oImage:""
                         });
                         
                     }
@@ -78,8 +78,8 @@ export default class EditOffer extends Component {
                   if(res.data.success){
                       this.setState({
                         otitle:res.data.offer.otitle,
-                        cemail:res.data.offer.cemail,
-                        feedmessage:res.data.offer.feedmessage
+                        oDes:res.data.offer.oDes,
+                        oImage:res.data.offer.oImage
                       });
                       console.log(this.state.offer);
                       
@@ -98,7 +98,7 @@ onChangeImage=event=>{
       data.append('file', this.state.selectedFile)
       axios.post("/offer/upload", data, {
       }).then(res => {
-          this.setState({feedmessage:res.data.filename})
+          this.setState({oImage:res.data.filename})
       })
   })
 }
@@ -125,9 +125,9 @@ onChangeImage=event=>{
                <label style={{marginBottom:'5px'}}>Offer Descrption</label>
                <input type="text"
                className="form-control"
-               name="cemail"
+               name="oDes"
                placeholder="Enter New Offer Descrpition"
-               value={this.state.cemail}
+               value={this.state.oDes}
                onChange={this.handleInputChange}/>
              </div>
  
@@ -138,7 +138,7 @@ onChangeImage=event=>{
               <label style={{marginBottom:'5px'}}>Offer Image</label>
               <input type="file"
               className="form-control"
-              name="feedmessage"
+              name="oImage"
               placeholder="Select the Image"
               onChange={this.onChangeImage}/>
             </div>

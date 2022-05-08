@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import swal from 'sweetalert2';
 import AdminNavBar from './AdminNavBar';
+import jspdf from 'jspdf'
+import "jspdf-autotable"
+
 
 export default class ManageFeedbacks extends Component {
 constructor(props){
@@ -59,6 +62,45 @@ handleSearchArea = (e) =>{
 }
 
 
+generateReport = (tickets) => {
+  const doc = new jspdf();
+
+  const tableColumn = ["Customer Name", "Customer Email", "Feedback Type","Feedback Message"];
+
+  const tableRows = [];
+
+  tickets.map(ticket => {
+
+    const ticketData = [
+
+        ticket.cname,
+
+        ticket.cemail,
+
+        
+        ticket.feedtype,   
+
+        ticket.feedmessage     
+
+    ];
+    tableRows.push(ticketData);
+  })
+
+ 
+    doc.text("All Feedbacks Report", 14, 15).setFontSize(12);
+    const date = Date().split(" ");
+    const dateStr = date[1] + "-" + date[2] + "-" + date[3];
+
+    doc.autoTable(tableColumn, tableRows, { styles: { fontSize: 8, }, startY: 35 });
+    doc.text(`Report Genarated Date - ${dateStr}`, 14, 23);
+    doc.save(`feedbacks_report_.pdf`);
+
+
+
+}
+
+
+
 
    render(){
      return (
@@ -78,6 +120,7 @@ handleSearchArea = (e) =>{
                     onChange={this.handleSearchArea}/>
         </div>  
         </center>
+        <button onClick={()=>this.generateReport(this.state.feedbacks)} className="btn btn-success"><a style={{textDecoration:'none',color:'white'}}>Generate Report</a></button>
 
         <br></br>
 
