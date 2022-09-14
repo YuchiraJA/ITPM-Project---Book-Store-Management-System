@@ -18,4 +18,4 @@
 ###### Member 3 - Chathula Anusara 
 ###### Member 4 - Dinusha
 
- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/java_logo_icon_168609.png" width="400"></a></p>
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank">
